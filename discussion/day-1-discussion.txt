@@ -1,0 +1,838 @@
+UKG java training
+-------------------
+https://www.linkedin.com/in/rajeevguptajavatrainer/
+https://github.com/rgupta00/UKG-java-8days-code
+https://drive.google.com/drive/folders/18vOAfWkaQ8xmE6wv65NCtXIkfUZozu9N?usp=sharing
+
+
+Agenda:
+Day 1: java oo
+Day 2: adv oo, Exception handling
+Day 3: Collection and threads
+Day 4: essential tools
+Day 5: RDBMS and NoSQL
+Day 6: Spring Boot REST
+Day 7: Intro to GCP and Linux
+Day 8: Docker and k8s
+
+
+Day 1: Basic oo concepts
+-----------------------
+Getting started with Java
+Intellij community edition IDE+ Java 17
+Java Architecture, JDK,JRE,
+Introduction to Object Oriented Principles
+Objects declaration, Methods, Constructors
+Method Overloading,Overriding
+The concept of inheritance
+override a method in subclass, super keyword
+final keyword
+
+
+let get started !
+
+What is java:
+OOP + JVM + rich set of lib
+
+
+Hello.java
+
+Foo.c			Foo.exe
+
+	Dev	PI				Deploy
+Hello.java-----------> Hello.class	-----------------	JVM PD
+			byte code
+			
+			optimized instrction set
+
+C/C++ GC
+
+Java is specially desinged for network computing
+
+
+ref vs pointer
+GC
+Student s=new Student();
+s=null :)
+
+Yes cmd hello world on cmd
+
+What happen internally:
+--------------------------
+javac Hello.java 
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ ls
+Hello.class  Hello.java
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ cat Hello.class 
+����=
+
+java/lang/Object<init>()V	
+
+
+
+java/lang/SystemoutLjava/io/PrintStream;
+                                       hello to UKG
+
+java/io/PrintStreamprintln(Ljava/lang/String;)VHelloCodeLineNumberTablemain([Ljava/lang/String;)V
+SourceFile
+��llo.java *��	�%	�
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java Hello 
+hello to UKG
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java Hello 
+Error: LinkageError occurred while loading main class Hello
+	java.lang.ClassFormatError: Incompatible magic value 1547911516 in class file Hello
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ javac Hello.java 
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java Hello 
+hello to UKG
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ javac --verbose Hello.java 
+error: invalid flag: --verbose
+Usage: javac <options> <source files>
+use --help for a list of possible options
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ javac -verbose Hello.java 
+[parsing started SimpleFileObject[/home/raj/Desktop/hello/Hello.java]]
+[parsing completed 7ms]
+[loading /modules/jdk.management.agent/module-info.class]
+[loading /modules/jdk.accessibility/module-info.class]
+[loading /modules/java.xml/module-info.class]
+[loading /modules/jdk.security.auth/module-info.class]
+[loading /modules/jdk.internal.vm.compiler.management/module-info.class]
+[loading /modules/java.instrument/module-info.class]
+[loading /modules/jdk.unsupported/module-info.class]
+[loading /modules/jdk.incubator.vector/module-info.class]
+[loading /modules/jdk.jdeps/module-info.class]
+[loading /modules/java.base/module-info.class]
+[loading /modules/java.scripting/module-info.class]
+[loading /modules/jdk.internal.opt/module-info.class]
+[loading /modules/jdk.net/module-info.class]
+[loading /modules/java.datatransfer/module-info.class]
+[loading /modules/java.management/module-info.class]
+[loading /modules/java.sql/module-info.class]
+[loading /modules/jdk.jconsole/module-info.class]
+[loading /modules/jdk.naming.rmi/module-info.class]
+[loading /modules/java.logging/module-info.class]
+[loading /modules/jdk.charsets/module-info.class]
+[loading /modules/jdk.jpackage/module-info.class]
+[loading /modules/jdk.internal.vm.ci/module-info.class]
+[loading /modules/java.net.http/module-info.class]
+[loading /modules/jdk.jfr/module-info.class]
+[loading /modules/jdk.naming.dns/module-info.class]
+[loading /modules/jdk.jdwp.agent/module-info.class]
+[loading /modules/jdk.security.jgss/module-info.class]
+[loading /modules/jdk.internal.ed/module-info.class]
+[loading /modules/jdk.incubator.foreign/module-info.class]
+[loading /modules/java.transaction.xa/module-info.class]
+[loading /modules/jdk.javadoc/module-info.class]
+[loading /modules/java.compiler/module-info.class]
+[loading /modules/jdk.localedata/module-info.class]
+[loading /modules/jdk.internal.le/module-info.class]
+[loading /modules/jdk.jartool/module-info.class]
+[loading /modules/jdk.internal.vm.compiler/module-info.class]
+[loading /modules/jdk.dynalink/module-info.class]
+[loading /modules/jdk.management/module-info.class]
+[loading /modules/jdk.sctp/module-info.class]
+[loading /modules/jdk.unsupported.desktop/module-info.class]
+[loading /modules/java.desktop/module-info.class]
+[loading /modules/java.rmi/module-info.class]
+[loading /modules/jdk.hotspot.agent/module-info.class]
+[loading /modules/jdk.crypto.cryptoki/module-info.class]
+[loading /modules/java.se/module-info.class]
+[loading /modules/jdk.attach/module-info.class]
+[loading /modules/jdk.jsobject/module-info.class]
+[loading /modules/jdk.httpserver/module-info.class]
+[loading /modules/java.prefs/module-info.class]
+[loading /modules/jdk.jshell/module-info.class]
+[loading /modules/jdk.zipfs/module-info.class]
+[loading /modules/java.management.rmi/module-info.class]
+[loading /modules/java.xml.crypto/module-info.class]
+[loading /modules/jdk.jlink/module-info.class]
+[loading /modules/jdk.xml.dom/module-info.class]
+[loading /modules/jdk.management.jfr/module-info.class]
+[loading /modules/java.smartcardio/module-info.class]
+[loading /modules/jdk.compiler/module-info.class]
+[loading /modules/jdk.jstatd/module-info.class]
+[loading /modules/jdk.random/module-info.class]
+[loading /modules/jdk.editpad/module-info.class]
+[loading /modules/jdk.crypto.ec/module-info.class]
+[loading /modules/java.security.sasl/module-info.class]
+[loading /modules/java.sql.rowset/module-info.class]
+[loading /modules/java.security.jgss/module-info.class]
+[loading /modules/jdk.jdi/module-info.class]
+[loading /modules/jdk.nio.mapmode/module-info.class]
+[loading /modules/java.naming/module-info.class]
+[loading /modules/jdk.internal.jvmstat/module-info.class]
+[loading /modules/jdk.jcmd/module-info.class]
+[search path for source files: .]
+[search path for class files: /usr/lib/java/jdk-17.0.5/lib/modules,.]
+[loading /modules/java.base/java/lang/Object.class]
+[loading /modules/java.base/java/lang/String.class]
+[loading /modules/java.base/java/lang/Deprecated.class]
+[loading /modules/java.base/java/lang/annotation/Retention.class]
+[loading /modules/java.base/java/lang/annotation/RetentionPolicy.class]
+[loading /modules/java.base/java/lang/annotation/Target.class]
+[loading /modules/java.base/java/lang/annotation/ElementType.class]
+[checking Hello]
+[loading /modules/java.base/java/io/Serializable.class]
+[loading /modules/java.base/java/lang/AutoCloseable.class]
+[loading /modules/java.base/java/lang/System.class]
+[loading /modules/java.base/java/io/PrintStream.class]
+[loading /modules/java.base/java/lang/Appendable.class]
+[loading /modules/java.base/java/io/Closeable.class]
+[loading /modules/java.base/java/io/FilterOutputStream.class]
+[loading /modules/java.base/java/io/OutputStream.class]
+[loading /modules/java.base/java/io/Flushable.class]
+[loading /modules/java.base/java/lang/Comparable.class]
+[loading /modules/java.base/java/lang/CharSequence.class]
+[loading /modules/java.base/java/lang/constant/Constable.class]
+[loading /modules/java.base/java/lang/constant/ConstantDesc.class]
+[wrote Hello.class]
+[total 101ms]
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ 
+
+
+
+
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java -verbose Hello
+
+
+
+[0.027s][info][class,load] java.lang.Object source: shared objects file
+[0.028s][info][class,load] java.io.Serializable source: shared objects file
+[0.028s][info][class,load] java.lang.Comparable source: shared objects file
+[0.028s][info][class,load] java.lang.CharSequence source: shared objects file
+[0.028s][info][class,load] java.lang.constant.Constable source: shared objects file
+[0.028s][info][class,load] java.lang.constant.ConstantDesc source: shared objects file
+[0.028s][info][class,load] java.lang.String source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.AnnotatedElement source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.GenericDeclaration source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.Type source: shared objects file
+[0.028s][info][class,load] java.lang.invoke.TypeDescriptor source: shared objects file
+[0.028s][info][class,load] java.lang.invoke.TypeDescriptor$OfField source: shared objects file
+[0.028s][info][class,load] java.lang.Class source: shared objects file
+[0.028s][info][class,load] java.lang.Cloneable source: shared objects file
+[0.028s][info][class,load] java.lang.ClassLoader source: shared objects file
+[0.028s][info][class,load] java.lang.System source: shared objects file
+[0.028s][info][class,load] java.lang.Throwable source: shared objects file
+[0.028s][info][class,load] java.lang.Error source: shared objects file
+[0.028s][info][class,load] java.lang.ThreadDeath source: shared objects file
+[0.028s][info][class,load] java.lang.Exception source: shared objects file
+[0.028s][info][class,load] java.lang.RuntimeException source: shared objects file
+[0.028s][info][class,load] java.lang.SecurityManager source: shared objects file
+[0.028s][info][class,load] java.security.ProtectionDomain source: shared objects file
+[0.028s][info][class,load] java.security.AccessControlContext source: shared objects file
+[0.028s][info][class,load] java.security.AccessController source: shared objects file
+[0.028s][info][class,load] java.security.SecureClassLoader source: shared objects file
+[0.028s][info][class,load] java.lang.ReflectiveOperationException source: shared objects file
+[0.028s][info][class,load] java.lang.ClassNotFoundException source: shared objects file
+[0.028s][info][class,load] java.lang.Record source: shared objects file
+[0.028s][info][class,load] java.lang.LinkageError source: shared objects file
+[0.028s][info][class,load] java.lang.NoClassDefFoundError source: shared objects file
+[0.028s][info][class,load] java.lang.ClassCastException source: shared objects file
+[0.028s][info][class,load] java.lang.ArrayStoreException source: shared objects file
+[0.028s][info][class,load] java.lang.VirtualMachineError source: shared objects file
+[0.028s][info][class,load] java.lang.InternalError source: shared objects file
+[0.028s][info][class,load] java.lang.OutOfMemoryError source: shared objects file
+[0.028s][info][class,load] java.lang.StackOverflowError source: shared objects file
+[0.028s][info][class,load] java.lang.IllegalMonitorStateException source: shared objects file
+[0.028s][info][class,load] java.lang.ref.Reference source: shared objects file
+[0.028s][info][class,load] java.lang.ref.SoftReference source: shared objects file
+[0.028s][info][class,load] java.lang.ref.WeakReference source: shared objects file
+[0.028s][info][class,load] java.lang.ref.FinalReference source: shared objects file
+[0.028s][info][class,load] java.lang.ref.PhantomReference source: shared objects file
+[0.028s][info][class,load] java.lang.ref.Finalizer source: shared objects file
+[0.028s][info][class,load] java.lang.Runnable source: shared objects file
+[0.028s][info][class,load] java.lang.Thread source: shared objects file
+[0.028s][info][class,load] java.lang.Thread$UncaughtExceptionHandler source: shared objects file
+[0.028s][info][class,load] java.lang.ThreadGroup source: shared objects file
+[0.028s][info][class,load] java.util.Dictionary source: shared objects file
+[0.028s][info][class,load] java.util.Map source: shared objects file
+[0.028s][info][class,load] java.util.Hashtable source: shared objects file
+[0.028s][info][class,load] java.util.Properties source: shared objects file
+[0.028s][info][class,load] java.lang.Module source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.AccessibleObject source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.Member source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.Field source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.Parameter source: shared objects file
+[0.028s][info][class,load] java.lang.reflect.Executable source: shared objects file
+[0.029s][info][class,load] java.lang.reflect.Method source: shared objects file
+[0.029s][info][class,load] java.lang.reflect.Constructor source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.MagicAccessorImpl source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.MethodAccessor source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.MethodAccessorImpl source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.ConstructorAccessor source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.ConstructorAccessorImpl source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.DelegatingClassLoader source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.ConstantPool source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.FieldAccessor source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.FieldAccessorImpl source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.UnsafeFieldAccessorImpl source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.UnsafeStaticFieldAccessorImpl source: shared objects file
+[0.029s][info][class,load] java.lang.annotation.Annotation source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.CallerSensitive source: shared objects file
+[0.029s][info][class,load] jdk.internal.reflect.NativeConstructorAccessorImpl source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.MethodHandle source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.DirectMethodHandle source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.VarHandle source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.MemberName source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.ResolvedMethodName source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.MethodHandleNatives source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.LambdaForm source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.TypeDescriptor$OfMethod source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.MethodType source: shared objects file
+[0.029s][info][class,load] java.lang.BootstrapMethodError source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.CallSite source: shared objects file
+[0.029s][info][class,load] jdk.internal.invoke.NativeEntryPoint source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.MethodHandleNatives$CallSiteContext source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.ConstantCallSite source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.MutableCallSite source: shared objects file
+[0.029s][info][class,load] java.lang.invoke.VolatileCallSite source: shared objects file
+[0.029s][info][class,load] java.lang.AssertionStatusDirectives source: shared objects file
+[0.029s][info][class,load] java.lang.Appendable source: shared objects file
+[0.029s][info][class,load] java.lang.AbstractStringBuilder source: shared objects file
+[0.029s][info][class,load] java.lang.StringBuffer source: shared objects file
+[0.029s][info][class,load] java.lang.StringBuilder source: shared objects file
+[0.029s][info][class,load] jdk.internal.misc.UnsafeConstants source: shared objects file
+[0.029s][info][class,load] jdk.internal.misc.Unsafe source: shared objects file
+[0.029s][info][class,load] jdk.internal.module.Modules source: shared objects file
+[0.029s][info][class,load] java.lang.AutoCloseable source: shared objects file
+[0.029s][info][class,load] java.io.Closeable source: shared objects file
+[0.029s][info][class,load] java.io.InputStream source: shared objects file
+[0.029s][info][class,load] java.io.ByteArrayInputStream source: shared objects file
+[0.029s][info][class,load] java.net.URL source: shared objects file
+[0.029s][info][class,load] java.util.jar.Manifest source: shared objects file
+[0.029s][info][class,load] jdk.internal.loader.BuiltinClassLoader source: shared objects file
+[0.029s][info][class,load] jdk.internal.loader.ClassLoaders source: shared objects file
+[0.029s][info][class,load] jdk.internal.loader.ClassLoaders$AppClassLoader source: shared objects file
+[0.029s][info][class,load] jdk.internal.loader.ClassLoaders$PlatformClassLoader source: shared objects file
+[0.029s][info][class,load] java.security.CodeSource source: shared objects file
+[0.029s][info][class,load] java.util.AbstractMap source: shared objects file
+[0.029s][info][class,load] java.util.concurrent.ConcurrentMap source: shared objects file
+[0.029s][info][class,load] java.util.concurrent.ConcurrentHashMap source: shared objects file
+[0.029s][info][class,load] java.lang.Iterable source: shared objects file
+[0.029s][info][class,load] java.util.Collection source: shared objects file
+[0.029s][info][class,load] java.util.AbstractCollection source: shared objects file
+[0.029s][info][class,load] java.util.List source: shared objects file
+[0.029s][info][class,load] java.util.AbstractList source: shared objects file
+[0.029s][info][class,load] java.util.RandomAccess source: shared objects file
+[0.029s][info][class,load] java.util.ArrayList source: shared objects file
+[0.029s][info][class,load] java.lang.StackTraceElement source: shared objects file
+[0.029s][info][class,load] java.nio.Buffer source: shared objects file
+[0.029s][info][class,load] java.lang.StackWalker source: shared objects file
+[0.029s][info][class,load] java.lang.StackStreamFactory$AbstractStackWalker source: shared objects file
+[0.029s][info][class,load] java.lang.StackWalker$StackFrame source: shared objects file
+[0.029s][info][class,load] java.lang.StackFrameInfo source: shared objects file
+[0.029s][info][class,load] java.lang.LiveStackFrame source: shared objects file
+[0.029s][info][class,load] java.lang.LiveStackFrameInfo source: shared objects file
+[0.029s][info][class,load] java.util.concurrent.locks.AbstractOwnableSynchronizer source: shared objects file
+[0.029s][info][class,load] java.lang.Boolean source: shared objects file
+[0.029s][info][class,load] java.lang.Character source: shared objects file
+[0.029s][info][class,load] java.lang.Number source: shared objects file
+[0.029s][info][class,load] java.lang.Float source: shared objects file
+[0.029s][info][class,load] java.lang.Double source: shared objects file
+[0.029s][info][class,load] java.lang.Byte source: shared objects file
+[0.029s][info][class,load] java.lang.Short source: shared objects file
+[0.029s][info][class,load] java.lang.Integer source: shared objects file
+[0.029s][info][class,load] java.lang.Long source: shared objects file
+[0.029s][info][class,load] java.util.Iterator source: shared objects file
+[0.029s][info][class,load] java.lang.reflect.RecordComponent source: shared objects file
+[0.029s][info][class,load] jdk.internal.vm.vector.VectorSupport source: shared objects file
+[0.029s][info][class,load] jdk.internal.vm.vector.VectorSupport$VectorPayload source: shared objects file
+[0.029s][info][class,load] jdk.internal.vm.vector.VectorSupport$Vector source: shared objects file
+[0.029s][info][class,load] jdk.internal.vm.vector.VectorSupport$VectorMask source: shared objects file
+[0.029s][info][class,load] jdk.internal.vm.vector.VectorSupport$VectorShuffle source: shared objects file
+[0.029s][info][class,load] java.lang.Integer$IntegerCache source: shared objects file
+[0.029s][info][class,load] java.lang.Long$LongCache source: shared objects file
+[0.029s][info][class,load] java.lang.Byte$ByteCache source: shared objects file
+[0.029s][info][class,load] java.lang.Short$ShortCache source: shared objects file
+[0.029s][info][class,load] java.lang.Character$CharacterCache source: shared objects file
+[0.029s][info][class,load] java.util.jar.Attributes$Name source: shared objects file
+[0.029s][info][class,load] java.util.ImmutableCollections$AbstractImmutableMap source: shared objects file
+[0.029s][info][class,load] java.util.ImmutableCollections$MapN source: shared objects file
+[0.029s][info][class,load] sun.util.locale.BaseLocale source: shared objects file
+[0.029s][info][class,load] jdk.internal.module.ArchivedModuleGraph source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleFinder source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.SystemModuleFinders$SystemModuleFinder source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$AbstractImmutableCollection source: shared objects file
+[0.030s][info][class,load] java.util.Set source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$AbstractImmutableSet source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$SetN source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleReference source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ModuleReferenceImpl source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor$Version source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$Set12 source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor$Requires source: shared objects file
+[0.030s][info][class,load] java.lang.Enum source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor$Requires$Modifier source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor$Exports source: shared objects file
+[0.030s][info][class,load] java.net.URI source: shared objects file
+[0.030s][info][class,load] java.util.function.Supplier source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.SystemModuleFinders$2 source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ModuleHashes$HashSupplier source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.SystemModuleFinders$3 source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor$Provides source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$AbstractImmutableList source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$List12 source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections$ListN source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ModuleTarget source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ModuleHashes source: shared objects file
+[0.030s][info][class,load] java.util.Collections$UnmodifiableMap source: shared objects file
+[0.030s][info][class,load] java.util.HashMap source: shared objects file
+[0.030s][info][class,load] java.util.Map$Entry source: shared objects file
+[0.030s][info][class,load] java.util.HashMap$Node source: shared objects file
+[0.030s][info][class,load] java.lang.module.ModuleDescriptor$Opens source: shared objects file
+[0.030s][info][class,load] java.lang.module.Configuration source: shared objects file
+[0.030s][info][class,load] java.lang.module.ResolvedModule source: shared objects file
+[0.030s][info][class,load] java.util.function.Function source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ModuleLoaderMap$Mapper source: shared objects file
+[0.030s][info][class,load] java.util.ImmutableCollections source: shared objects file
+[0.030s][info][class,load] java.lang.ModuleLayer source: shared objects file
+[0.030s][info][class,load] jdk.internal.math.FDBigInteger source: shared objects file
+[0.030s][info][class,load] jdk.internal.loader.ArchivedClassLoaders source: shared objects file
+[0.030s][info][class,load] jdk.internal.loader.ClassLoaders$BootClassLoader source: shared objects file
+[0.030s][info][class,load] java.security.Principal source: shared objects file
+[0.030s][info][class,load] java.security.ProtectionDomain$Key source: shared objects file
+[0.030s][info][class,load] jdk.internal.loader.NativeLibraries source: shared objects file
+[0.030s][info][class,load] java.util.concurrent.ConcurrentHashMap$Node source: shared objects file
+[0.030s][info][class,load] jdk.internal.loader.AbstractClassLoaderValue source: shared objects file
+[0.030s][info][class,load] jdk.internal.loader.ClassLoaderValue source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ServicesCatalog source: shared objects file
+[0.030s][info][class,load] java.util.concurrent.CopyOnWriteArrayList source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ServicesCatalog$ServiceProvider source: shared objects file
+[0.030s][info][class,load] java.util.AbstractSet source: shared objects file
+[0.030s][info][class,load] java.util.HashSet source: shared objects file
+[0.030s][info][class,load] jdk.internal.loader.BuiltinClassLoader$LoadedModule source: shared objects file
+[0.030s][info][class,load] jdk.internal.module.ArchivedBootLayer source: shared objects file
+[0.030s][info][class,load] java.lang.Module$ArchivedData source: shared objects file
+[0.031s][info][class,load] java.lang.NullPointerException source: shared objects file
+[0.031s][info][class,load] java.lang.ArithmeticException source: shared objects file
+[0.033s][info][class,load] java.io.ObjectStreamField source: shared objects file
+[0.033s][info][class,load] java.util.Comparator source: shared objects file
+[0.033s][info][class,load] java.lang.String$CaseInsensitiveComparator source: shared objects file
+[0.034s][info][class,load] jdk.internal.misc.CDS source: shared objects file
+[0.034s][info][class,load] jdk.internal.access.JavaLangReflectAccess source: shared objects file
+[0.034s][info][class,load] java.lang.reflect.ReflectAccess source: shared objects file
+[0.034s][info][class,load] jdk.internal.access.SharedSecrets source: shared objects file
+[0.034s][info][class,load] java.lang.invoke.MethodHandles source: shared objects file
+[0.034s][info][class,load] java.lang.invoke.MemberName$Factory source: shared objects file
+[0.034s][info][class,load] java.security.Guard source: shared objects file
+[0.034s][info][class,load] java.security.Permission source: shared objects file
+[0.034s][info][class,load] java.security.BasicPermission source: shared objects file
+[0.034s][info][class,load] java.lang.reflect.ReflectPermission source: shared objects file
+[0.034s][info][class,load] java.lang.StringLatin1 source: shared objects file
+[0.034s][info][class,load] java.lang.invoke.MethodHandles$Lookup source: shared objects file
+[0.034s][info][class,load] java.util.Objects source: shared objects file
+[0.034s][info][class,load] jdk.internal.reflect.Reflection source: shared objects file
+[0.034s][info][class,load] java.lang.Math source: shared objects file
+[0.034s][info][class,load] java.util.ImmutableCollections$MapN$1 source: shared objects file
+[0.034s][info][class,load] java.util.ImmutableCollections$MapN$MapNIterator source: shared objects file
+[0.034s][info][class,load] java.util.KeyValueHolder source: shared objects file
+[0.034s][info][class,load] java.util.LinkedHashMap$Entry source: shared objects file
+[0.034s][info][class,load] java.util.HashMap$TreeNode source: shared objects file
+[0.035s][info][class,load] java.lang.Runtime source: shared objects file
+[0.035s][info][class,load] java.util.concurrent.locks.Lock source: shared objects file
+[0.035s][info][class,load] java.util.concurrent.locks.ReentrantLock source: shared objects file
+[0.035s][info][class,load] java.util.concurrent.ConcurrentHashMap$Segment source: shared objects file
+[0.035s][info][class,load] java.util.concurrent.ConcurrentHashMap$CounterCell source: shared objects file
+[0.035s][info][class,load] java.util.concurrent.locks.LockSupport source: shared objects file
+[0.035s][info][class,load] java.util.concurrent.ConcurrentHashMap$ReservationNode source: shared objects file
+[0.035s][info][class,load] java.security.PrivilegedAction source: shared objects file
+[0.035s][info][class,load] jdk.internal.reflect.ReflectionFactory$GetReflectionFactoryAction source: shared objects file
+[0.035s][info][class,load] jdk.internal.reflect.ReflectionFactory source: shared objects file
+[0.035s][info][class,load] java.lang.ref.Reference$ReferenceHandler source: shared objects file
+[0.035s][info][class,load] jdk.internal.ref.Cleaner source: shared objects file
+[0.035s][info][class,load] java.lang.ref.ReferenceQueue source: shared objects file
+[0.035s][info][class,load] java.lang.ref.ReferenceQueue$Null source: shared objects file
+[0.035s][info][class,load] java.lang.ref.ReferenceQueue$Lock source: shared objects file
+[0.035s][info][class,load] jdk.internal.access.JavaLangRefAccess source: shared objects file
+[0.035s][info][class,load] java.lang.ref.Reference$1 source: shared objects file
+[0.035s][info][class,load] java.lang.ref.Finalizer$FinalizerThread source: shared objects file
+[0.035s][info][class,load] jdk.internal.access.JavaLangAccess source: shared objects file
+[0.035s][info][class,load] java.lang.System$2 source: shared objects file
+[0.035s][info][class,load] jdk.internal.util.SystemProps source: shared objects file
+[0.035s][info][class,load] jdk.internal.util.SystemProps$Raw source: shared objects file
+[0.035s][info][class,load] jdk.internal.misc.VM source: shared objects file
+[0.036s][info][class,load] java.lang.StringConcatHelper source: shared objects file
+[0.036s][info][class,load] java.lang.VersionProps source: shared objects file
+[0.053s][info][class,load] java.util.Arrays source: shared objects file
+[0.053s][info][class,load] java.lang.CharacterData source: shared objects file
+[0.053s][info][class,load] java.lang.CharacterDataLatin1 source: shared objects file
+[0.053s][info][class,load] java.util.HashMap$EntrySet source: shared objects file
+[0.053s][info][class,load] java.util.HashMap$HashIterator source: shared objects file
+[0.053s][info][class,load] java.util.HashMap$EntryIterator source: shared objects file
+[0.053s][info][class,load] jdk.internal.util.StaticProperty source: shared objects file
+[0.053s][info][class,load] java.io.FileInputStream source: shared objects file
+[0.053s][info][class,load] java.io.FileDescriptor source: shared objects file
+[0.054s][info][class,load] jdk.internal.access.JavaIOFileDescriptorAccess source: shared objects file
+[0.054s][info][class,load] java.io.FileDescriptor$1 source: shared objects file
+[0.054s][info][class,load] java.io.Flushable source: shared objects file
+[0.054s][info][class,load] java.io.OutputStream source: shared objects file
+[0.054s][info][class,load] java.io.FileOutputStream source: shared objects file
+[0.054s][info][class,load] java.io.FilterInputStream source: shared objects file
+[0.054s][info][class,load] java.io.BufferedInputStream source: shared objects file
+[0.054s][info][class,load] java.io.FilterOutputStream source: shared objects file
+[0.054s][info][class,load] java.io.PrintStream source: shared objects file
+[0.054s][info][class,load] java.io.BufferedOutputStream source: shared objects file
+[0.054s][info][class,load] java.nio.charset.Charset source: shared objects file
+[0.054s][info][class,load] java.nio.charset.spi.CharsetProvider source: shared objects file
+[0.054s][info][class,load] sun.nio.cs.StandardCharsets source: shared objects file
+[0.054s][info][class,load] java.lang.ThreadLocal source: shared objects file
+[0.054s][info][class,load] java.util.concurrent.atomic.AtomicInteger source: shared objects file
+[0.054s][info][class,load] sun.nio.cs.HistoricallyNamedCharset source: shared objects file
+[0.054s][info][class,load] sun.nio.cs.Unicode source: shared objects file
+[0.054s][info][class,load] sun.nio.cs.UTF_8 source: shared objects file
+[0.054s][info][class,load] java.io.Writer source: shared objects file
+[0.054s][info][class,load] java.io.OutputStreamWriter source: shared objects file
+[0.054s][info][class,load] sun.nio.cs.StreamEncoder source: shared objects file
+[0.054s][info][class,load] java.nio.charset.CharsetEncoder source: shared objects file
+[0.054s][info][class,load] sun.nio.cs.UTF_8$Encoder source: jrt:/java.base
+[0.054s][info][class,load] java.nio.charset.CodingErrorAction source: shared objects file
+[0.054s][info][class,load] java.nio.ByteBuffer source: shared objects file
+[0.055s][info][class,load] jdk.internal.misc.ScopedMemoryAccess source: shared objects file
+[0.055s][info][class,load] jdk.internal.access.JavaNioAccess source: shared objects file
+[0.055s][info][class,load] java.nio.Buffer$1 source: shared objects file
+[0.055s][info][class,load] java.nio.HeapByteBuffer source: shared objects file
+[0.055s][info][class,load] java.nio.ByteOrder source: shared objects file
+[0.055s][info][class,load] java.io.BufferedWriter source: shared objects file
+[0.055s][info][class,load] java.lang.Terminator source: shared objects file
+[0.055s][info][class,load] jdk.internal.misc.Signal$Handler source: shared objects file
+[0.055s][info][class,load] java.lang.Terminator$1 source: shared objects file
+[0.055s][info][class,load] jdk.internal.misc.Signal source: shared objects file
+[0.055s][info][class,load] java.util.Hashtable$Entry source: shared objects file
+[0.055s][info][class,load] jdk.internal.misc.Signal$NativeHandler source: shared objects file
+[0.055s][info][class,load] jdk.internal.misc.OSEnvironment source: shared objects file
+[0.055s][info][class,load] java.util.Collections source: shared objects file
+[0.055s][info][class,load] java.util.Collections$EmptySet source: shared objects file
+[0.055s][info][class,load] java.util.Collections$EmptyList source: shared objects file
+[0.055s][info][class,load] java.util.Collections$EmptyMap source: shared objects file
+[0.055s][info][class,load] java.lang.IllegalArgumentException source: shared objects file
+[0.059s][info][class,load] java.lang.invoke.MethodHandleStatics source: shared objects file
+[0.059s][info][class,load] sun.security.action.GetPropertyAction source: shared objects file
+[0.059s][info][class,load] jdk.internal.module.ModuleBootstrap source: shared objects file
+[0.059s][info][class,load] sun.invoke.util.VerifyAccess source: shared objects file
+[0.059s][info][class,load] java.lang.reflect.Modifier source: shared objects file
+[0.059s][info][class,load] jdk.internal.access.JavaLangModuleAccess source: shared objects file
+[0.059s][info][class,load] java.lang.module.ModuleDescriptor$1 source: shared objects file
+[0.059s][info][class,load] java.io.File source: shared objects file
+[0.059s][info][class,load] java.io.DefaultFileSystem source: shared objects file
+[0.060s][info][class,load] java.io.FileSystem source: shared objects file
+[0.060s][info][class,load] java.io.UnixFileSystem source: shared objects file
+[0.060s][info][class,load] jdk.internal.util.ArraysSupport source: shared objects file
+[0.060s][info][class,load] jdk.internal.module.ModulePatcher source: shared objects file
+[0.060s][info][class,load] jdk.internal.module.ModuleBootstrap$Counters source: shared objects file
+[0.060s][info][class,load] jdk.internal.access.JavaNetUriAccess source: shared objects file
+[0.060s][info][class,load] java.net.URI$1 source: shared objects file
+[0.060s][info][class,load] java.security.cert.Certificate source: shared objects file
+[0.060s][info][class,load] java.lang.ClassLoader$ParallelLoaders source: shared objects file
+[0.060s][info][class,load] java.util.WeakHashMap source: shared objects file
+[0.060s][info][class,load] java.util.WeakHashMap$Entry source: shared objects file
+[0.060s][info][class,load] java.util.Collections$SetFromMap source: shared objects file
+[0.060s][info][class,load] java.util.WeakHashMap$KeySet source: shared objects file
+[0.060s][info][class,load] jdk.internal.access.JavaSecurityAccess source: shared objects file
+[0.060s][info][class,load] java.security.ProtectionDomain$JavaSecurityAccessImpl source: shared objects file
+[0.060s][info][class,load] jdk.internal.loader.ClassLoaderHelper source: shared objects file
+[0.060s][info][class,load] java.util.Queue source: shared objects file
+[0.060s][info][class,load] java.util.Deque source: shared objects file
+[0.060s][info][class,load] java.util.ArrayDeque source: shared objects file
+[0.060s][info][class,load] jdk.internal.loader.BootLoader source: shared objects file
+[0.060s][info][class,load] jdk.internal.loader.URLClassPath source: shared objects file
+[0.061s][info][class,load] java.net.URLStreamHandlerFactory source: shared objects file
+[0.061s][info][class,load] java.net.URL$DefaultFactory source: shared objects file
+[0.061s][info][class,load] jdk.internal.access.JavaNetURLAccess source: shared objects file
+[0.061s][info][class,load] java.net.URL$3 source: shared objects file
+[0.061s][info][class,load] java.io.File$PathStatus source: shared objects file
+[0.061s][info][class,load] sun.net.www.ParseUtil source: shared objects file
+[0.061s][info][class,load] java.util.HexFormat source: shared objects file
+[0.061s][info][class,load] java.net.URLStreamHandler source: shared objects file
+[0.061s][info][class,load] sun.net.www.protocol.file.Handler source: shared objects file
+[0.061s][info][class,load] sun.net.util.IPAddressUtil source: shared objects file
+[0.061s][info][class,load] jdk.internal.util.Preconditions source: shared objects file
+[0.061s][info][class,load] java.lang.invoke.StringConcatFactory source: shared objects file
+[0.061s][info][class,load] java.lang.invoke.StringConcatFactory$1 source: shared objects file
+[0.061s][info][class,load] java.lang.invoke.StringConcatFactory$2 source: shared objects file
+[0.061s][info][class,load] java.lang.invoke.StringConcatFactory$3 source: shared objects file
+[0.062s][info][class,load] jdk.internal.vm.PostVMInitHook source: shared objects file
+[0.062s][info][class,load] java.util.Locale source: shared objects file
+[0.062s][info][class,load] sun.util.locale.LocaleUtils source: shared objects file
+[0.062s][info][class,load] java.util.Optional source: shared objects file
+[0.062s][info][class,load] sun.util.locale.BaseLocale$Key source: shared objects file
+[0.062s][info][class,load] sun.util.locale.LocaleObjectCache source: shared objects file
+[0.062s][info][class,load] sun.util.locale.BaseLocale$Cache source: shared objects file
+[0.062s][info][class,load] sun.util.locale.LocaleObjectCache$CacheEntry source: shared objects file
+[0.062s][info][class,load] java.util.Locale$Cache source: shared objects file
+[0.062s][info][class,load] jdk.internal.vm.PostVMInitHook$1 source: shared objects file
+[0.063s][info][class,load] sun.launcher.LauncherHelper source: shared objects file
+[0.063s][info][class,load] java.lang.StringCoding source: shared objects file
+[0.063s][info][class,load] sun.net.util.URLUtil source: shared objects file
+[0.063s][info][class,load] java.security.PrivilegedExceptionAction source: shared objects file
+[0.063s][info][class,load] jdk.internal.loader.URLClassPath$3 source: shared objects file
+[0.063s][info][class,load] jdk.internal.loader.URLClassPath$Loader source: shared objects file
+[0.063s][info][class,load] jdk.internal.loader.URLClassPath$FileLoader source: jrt:/java.base
+[0.064s][info][class,load] jdk.internal.loader.Resource source: shared objects file
+
+------------------------------
+tool : intelli
+
+
+https://www3.ntu.edu.sg/home/ehchua/programming/index.html
+
+
+Hello world:
+jvm vs jre vs jdk
+
+how memory mgt works?
+
+
+hello world:
+--------------
+public class Car {
+    public Car(){
+        System.out.println("ctr");
+    }
+    public void move(){
+        System.out.println("moving in a car");
+    }
+
+}
+
+
+package com.ukg.day1.session1;
+
+public class Hello {
+    public static void main(String[] args) {
+       //array c vs java
+//        int x[]=new int[40];
+//        for(int i=0;i<x.length;i++){
+//            System.out.println(x[i]);
+
+//        for(int temp: x){
+//            System.out.println(temp);
+//        }
+
+//    Car car=new Car();
+//        System.out.println(car);
+
+//        Car[]cars=new Car[5];
+//        cars[0]=new Car();
+//        cars[1]=new Car();
+//        cars[2]=new Car();
+//        cars[3]=new Car();
+//        cars[4]=new Car();
+
+
+
+        for(Car c: cars){
+            c.move();
+        }
+
+    }
+}
+
+
+Pillor of object orientation
+------------------------------
+object : run time ex of the class
+	it stored in heap
+	it container data (instance variable)
+	
+	every object have3 things
+	---------------------------------
+	identity (hashcode) by default every object have diff hashcode
+	
+	state: instance variable define the state
+	
+	behaviour: methods
+	
+vs 
+class: template to create objects
+	stored in CA/MA
+	only one copy
+	what is stored in class
+	
+	template of class + method static/ non static + static data
+	
+
+
+OO: a subject that talk about interaction bw the objects
+
+	use a
+	has a
+	is a 
+	loose couling and high cohesion *
+
+	static method*
+	
+pillor of oo
+---------------
+	abstraction encapsulation 
+
+
+
+
+abstraction: ADT
+
+Stack
+
+100% abstraction: interface
+
+interface Stack{
+	public int pop();
+	public void push(int x);
+}
+
+
+Heap stack methdod area
+
+
+
+class Car{
+
+
+	 static string brand="abc"		class variable / static variable
+	
+	 String color;				instance variblw
+	
+	////
+}
+
+Car car1 =new Car();
+car.brand="foo"
+Car car2 =new Car();
+
+Inhitance:
+
+resuablity: is possible wihout inheritance... composition
+
+extendablity: extends  not possible without inheritanc
+subsitutablity (Overriding) not possible without inheritanc
+
+
+composition vs inhertance
+favour composition over inhertance*
+
+Hello world
+
+syn:
+
+class A{
+
+}
+
+cl
+
+inhertance
+
+		polymorphism
+		
+		
+static 					dyamic
+
+function overloading  op overloading
+
+template fun (generic fun)
+
+  //improve the design as explained
+        //loose coupling and high cohesion
+        //favour composition over inhertance
+        //interface break the hierarchy
+        
+        //Wiki gof pattern
+        
+        can we have private ctr: yes
+        
+        can we have static ctr No
+        
+        ctr never get inherted
+        
+
+		Singleton: 
+
+
+init block and static init block
+
+dry :
+class A{
+	
+	{
+	//
+	//
+	}
+	{
+	//
+	//
+	}
+
+	A(){
+	
+	}
+
+	A(int a){
+	
+	}
+}
+
+
+
+
+jdk
+maven
+ide
+postgres + pgAdmin4
+
+mongodb
+compass
+git
+
+maven : build tools
+gcp account
+
+last tool k8s
+local setup
+kinD vs Minkikube
+
+https://www.youtube.com/watch?v=Bdw5saYQMvY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
