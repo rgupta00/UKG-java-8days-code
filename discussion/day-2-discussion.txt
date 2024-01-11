@@ -1,0 +1,834 @@
+UKG java training
+-------------------
+https://www.linkedin.com/in/rajeevguptajavatrainer/
+https://github.com/rgupta00/UKG-java-8days-code
+https://drive.google.com/drive/folders/18vOAfWkaQ8xmE6wv65NCtXIkfUZozu9N?usp=sharing
+
+
+Agenda:
+Day 1: java oo
+Day 2: adv oo, Exception handling
+Day 3: Collection and threads
+Day 4: essential tools
+Day 5: RDBMS and NoSQL
+Day 6: Spring Boot REST
+Day 7: Intro to GCP and Linux
+Day 8: Docker and k8s
+
+
+Day 1: Basic oo concepts
+-----------------------
+Getting started with Java
+Intellij community edition IDE+ Java 17
+Java Architecture, JDK,JRE,
+Introduction to Object Oriented Principles
+Objects declaration, Methods, Constructors
+Method Overloading,Overriding
+The concept of inheritance
+override a method in subclass, super keyword
+final keyword
+
+
+let get started !
+
+What is java:
+OOP + JVM + rich set of lib
+
+
+Hello.java
+
+Foo.c			Foo.exe
+
+	Dev	PI				Deploy
+Hello.java-----------> Hello.class	-----------------	JVM PD
+			byte code
+			
+			optimized instrction set
+
+C/C++ GC
+
+Java is specially desinged for network computing
+
+
+ref vs pointer
+GC
+Student s=new Student();
+s=null :)
+
+Yes cmd hello world on cmd
+
+What happen internally:
+--------------------------
+javac Hello.java 
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ ls
+Hello.class  Hello.java
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ cat Hello.class 
+����=
+
+java/lang/Object<init>()V	
+
+
+
+java/lang/SystemoutLjava/io/PrintStream;
+                                       hello to UKG
+
+java/io/PrintStreamprintln(Ljava/lang/String;)VHelloCodeLineNumberTablemain([Ljava/lang/String;)V
+SourceFile
+��llo.java *��	�%	�
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java Hello 
+hello to UKG
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java Hello 
+Error: LinkageError occurred while loading main class Hello
+	java.lang.ClassFormatError: Incompatible magic value 1547911516 in class file Hello
+
+
+
+
+
+raj@raj-ThinkPad-E15-Gen-4:~/Desktop/hello$ java -verbose Hello
+
+
+------------------------------
+tool : intelli
+
+
+https://www3.ntu.edu.sg/home/ehchua/programming/index.html
+
+
+Hello world:
+jvm vs jre vs jdk
+
+how memory mgt works?
+
+
+hello world:
+--------------
+public class Car {
+    public Car(){
+        System.out.println("ctr");
+    }
+    public void move(){
+        System.out.println("moving in a car");
+    }
+
+}
+
+
+package com.ukg.day1.session1;
+
+public class Hello {
+    public static void main(String[] args) {
+       //array c vs java
+//        int x[]=new int[40];
+//        for(int i=0;i<x.length;i++){
+//            System.out.println(x[i]);
+
+//        for(int temp: x){
+//            System.out.println(temp);
+//        }
+
+//    Car car=new Car();
+//        System.out.println(car);
+
+//        Car[]cars=new Car[5];
+//        cars[0]=new Car();
+//        cars[1]=new Car();
+//        cars[2]=new Car();
+//        cars[3]=new Car();
+//        cars[4]=new Car();
+
+
+
+        for(Car c: cars){
+            c.move();
+        }
+
+    }
+}
+
+
+Pillor of object orientation
+------------------------------
+object : run time ex of the class
+	it stored in heap
+	it container data (instance variable)
+	
+	every object have3 things
+	---------------------------------
+	identity (hashcode) by default every object have diff hashcode
+	
+	state: instance variable define the state
+	
+	behaviour: methods
+	
+vs 
+class: template to create objects
+	stored in CA/MA
+	only one copy
+	what is stored in class
+	
+	template of class + method static/ non static + static data
+	
+
+
+OO: a subject that talk about interaction bw the objects
+
+	use a
+	has a
+	is a 
+	loose couling and high cohesion *
+
+	static method*
+	
+pillor of oo
+---------------
+	abstraction encapsulation 
+
+
+
+
+abstraction: ADT
+
+Stack
+
+100% abstraction: interface
+
+interface Stack{
+	public int pop();
+	public void push(int x);
+}
+
+
+Heap stack methdod area
+
+
+
+class Car{
+
+
+	 static string brand="abc"		class variable / static variable
+	
+	 String color;				instance variblw
+	
+	////
+}
+
+Car car1 =new Car();
+car.brand="foo"
+Car car2 =new Car();
+
+Inhitance:
+
+resuablity: is possible wihout inheritance... composition
+
+extendablity: extends  not possible without inheritanc
+subsitutablity (Overriding) not possible without inheritanc
+
+
+composition vs inhertance
+favour composition over inhertance*
+
+Hello world
+
+syn:
+
+class A{
+
+}
+
+cl
+
+inhertance
+
+		polymorphism
+		
+		
+static 					dyamic
+
+function overloading  op overloading
+
+template fun (generic fun)
+
+  //improve the design as explained
+        //loose coupling and high cohesion
+        //favour composition over inhertance
+        //interface break the hierarchy
+        
+        //Wiki gof pattern
+        
+        can we have private ctr: yes
+        
+        can we have static ctr No
+        
+        ctr never get inherted
+        
+
+		Singleton: 
+
+
+init block and static init block
+
+dry :
+class A{
+	
+	{
+	//
+	//
+	}
+	{
+	//
+	//
+	}
+
+	A(){
+	
+	}
+
+	A(int a){
+	
+	}
+}
+
+
+
+
+jdk
+maven
+ide
+postgres + pgAdmin4
+
+mongodb
+compass
+git
+
+maven : build tools
+gcp account
+
+last tool k8s
+local setup
+kinD vs Minkikube
+
+https://www.youtube.com/watch?v=Bdw5saYQMvY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day-2;
+---------
+doubts:
+
+	revision:
+	
+	class
+	object
+	
+	class:
+		instance variable
+		class variable
+		
+		getter / setter (side effect)
+		mutator
+		
+		ctr: overloading F
+			overrding X
+		destructor in java X
+		Auto GC
+		
+		init block
+		static init block
+		
+	static data/ methods
+	--------
+	class Player{
+		private static int counter=0;
+		private int id;
+		private String name;
+		
+		Player(String name){
+		id=++counter;
+		this.name=name;
+		}
+		///
+		
+		public static int getPlayerCount(){
+			return counter;
+		}
+	
+	}
+	
+	Player p1=new Player(.....);
+	sop(Player.getPlayerCount());
+	
+	Note: no need to create the object to call the static method
+	
+	static method can not use instance variable
+	
+	
+	Singleton dp:
+	--------------
+		head first design pattern
+		
+	one object per application
+	private ctr
+	
+	class MySingleton{
+	
+		private static MySingleton m=new MySingleton();
+		
+		private MySingleton(){}
+		
+		public static MySingleton getMySingleton(){
+			return m;
+		}
+	
+	
+	}
+	
+	main
+	----
+	MySingleton m=new MySingleton();  XXXXX not work
+	
+	MySingleton m=MySingleton.getMySingleton();
+	
+	Java: java reflection api --> it voilate oops 
+	C++ RTTI
+	
+	
+	relationship bw the object
+	---------------------------
+	1. use a
+		A trainer is using marker to write 
+		
+		"A person named ram moving from LN to Noida using metro"
+			loose coupling and high cohesion
+		
+	2. has a
+		association
+		 
+		aggigation 
+		
+			MusicGroup <>------------Musician
+		
+		compostion
+		
+			Building <>------------Flat
+		
+	3. is a
+		inheritance relationship
+		
+	
+	Note: inheriacne is costly
+	first try use a 
+	then has
+	then only is a
+	
+	
+	extendablity  subtitutablity and resuablity
+	
+	resuablity is the prime purpose of inh  XXXX
+	
+	inheritance
+	------------
+	extendablity  subtitutablity  is the prime purpose
+	
+	prove : favour composition over inheritance
+	
+	inheritance 
+	class Emp{
+	
+		public void procesEmpData(){
+		
+		}
+	}
+	inheritance 
+	class ITEmp ext..{
+	
+		public void procesEmpData(){
+			super.procesEmpData();
+		//
+		}
+	}
+	Overrding (A B)
+	why it is done:
+	
+	class KD{
+	
+		public void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		public void sellMilk(){
+		}
+	}
+	
+	
+	
+	coverient retun type:
+	--------------------
+	java 4: outdated
+	java 5: 2005
+	java 8: 2013
+	java 9: 
+	...
+	...
+	java 21 LTS
+	
+	
+	
+	
+	before coverient retun type:
+	overriding : method sign must be same
+	
+	
+	shallowding: for static method / data
+	class KD{
+	
+		static public  void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		static public void sellMilk(){
+		}
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();
+	d.sellMilk();
+	
+	Note: it is type of pointer that decide which method is gona to be called
+	
+	
+case 2:
+	Error: 
+	
+	shallowding: for static method / data
+	class KD{
+	
+		 public  void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		static public void sellMilk(){
+		}
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();
+	d.sellMilk();
+	
+	
+	
+case 2:
+	it is not overriding
+	sellMilk()is not viable to ImporvedKD no q of overriding
+	
+	shallowding: for static method / data
+	
+	class KD{
+	
+		 private  void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		public void sellMilk(){
+		}
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();
+	d.sellMilk();	Error
+
+
+		----
+	ImporvedKD d=new ImporvedKD();
+	d.sellMilk();	No error
+	
+	
+case 3: overrding and visibity
+	--------------------------------------------------------
+	Rule: u can not reduce the visibity of overriden method
+	---------------------------------------------------------
+
+	
+	private default protected public
+	
+	
+	No
+	class KD{
+		public void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		private void sellMilk(){
+		}
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();
+	d.sellMilk();	Error
+	
+	
+	
+	
+	NO
+	
+	class KD{
+		public void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		protected void sellMilk(){
+		}
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();  
+	d.sellMilk();	Error
+	
+	
+	
+	YES
+	
+	class KD{
+		 void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		protected void sellMilk(){
+		}
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();  
+	d.sellMilk();	Error
+	
+	
+	A MCQ:
+	
+	
+	
+	class KD{
+		 void sellMilk(){
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		
+	}
+	
+	main:
+	----
+	KD d=new ImporvedKD();  
+	d.sellMilk();	Error
+	
+	
+	
+	
+	
+	
+	class Base {
+		public static void foo(Base bObj) {
+			System.out.println("In Base.foo()");
+			bObj.bar();
+		}
+
+		public void bar() {
+			System.out.println("In Base.bar()");
+		}
+	}
+
+	class Derived extends Base {
+		public static void foo(Base bObj) {
+			System.out.println("In Derived.foo()");
+			bObj.bar();
+		}
+
+		public void bar() {
+			System.out.println("In Derived.bar()");
+		}
+	}
+
+	class OverrideTest {
+		public static void main(String[] args) {
+			Base bObj = new Derived();
+			bObj.foo(bObj);
+		}
+	}
+		
+	
+	
+	before Covarient return type: till java 4
+	----------------------
+	class Milk{
+	
+	}
+	
+	class pasteurizedMilk extends Milk{
+	
+	}
+	
+	class KD{
+		public Milk sellMilk(){
+			return new Milk();
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		public Milk sellMilk(){
+		}
+	}
+		
+		
+
+	 Covarient return type: in java 5
+	----------------------
+	class Milk{
+	
+	}
+	
+	class pasteurizedMilk extends Milk{
+	
+	}
+	
+	class KD{
+		public Milk sellMilk(){
+			return new Milk();
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		public pasteurizedMilk sellMilk(){
+		}
+	}
+	
+	
+	This code is not allowed : as it not not impoving over the base class
+	class Milk{
+	
+	}
+	
+	class pasteurizedMilk extends Milk{
+	
+	}
+	
+	class KD{
+		public pasteurizedMilk sellMilk(){
+			return new Milk();
+		}
+	}
+	
+	class ImporvedKD extends KD{
+		//overrding
+		public Milk sellMilk(){
+		}
+	}
+	
+
+	class Tree {
+		Tree getInstance() { 
+		return new Tree();
+		}
+	}
+	
+	class Fruit extends Tree {
+	
+	   Object getInstance() { 
+	  	 return this;
+	   } 
+	}
+
+	class Mango extends Fruit{    
+	}
+	
+	
+	
+	why Composition is perfered over inheritance
+	
+	
+	
+	Which statement(s), inserted at line 1, will NOT compile?
+	    A. Fruit getInstance() { return this;} 
+	    B. Mango getInstance() { return this;} 
+	    C. Tree getInstance() { return this;} 
+	    D. Object getInstance() { return this;} 
+    
+    
+    
+    
+	
+	
+	interface methods, abs class
+	hotspot jvm
+	private methods are not visible in drived class
+	hence no q of overriding and overloading
+	visibility modifier
+	package
+	Abstract classes in Java, Examples Implementation of an interface,
+	using interface Interface 
+	vs Abstract class Inner classes Object class,String class,Immutability
+
+	The concept of exception handling
+
+	Exception class methods, throw and rethrow 
+		finally keyword, user-defined exceptions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
