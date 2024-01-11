@@ -788,23 +788,311 @@ case 3: overrding and visibity
     
     
 	
+	"A person named ram moving from LN to Noida using metro"
+		"loose coupling and high cohesion"
+		
+	
 	
 	interface methods, abs class
-	hotspot jvm
+	
+	favour composition over inhertance
+	can we do resuablity without inhertiance YES
+	
+	
+	interface:
+	
+	* no instance varaible is allowd
+	* methods are public abs
+	
+	interface Foo{
+	
+		public static final int i=4;
+		public as void foo();
+		void foo2();
+	}
+	
+	
+	Java 7: any method of the interface can not have body
+	interface Foo{
+
+		void foo2(){}
+	}
+	
+	Java 8: default methods are allowed*
+	
+	interface Foo{
+
+		default void foo2(){
+		}
+	}
+	
+	
+		what is the overriding rules
+		
+		
+	interface Foo{
+		void foo2();
+		void bar();
+	}
+	abstract class FooImp implem... Foo{
+		public void foo2(){}
+	}
+	
+	 class FooImp2 extends FooImp{
+		public void bar(){}
+	}
+	
+	
+	instance variable shadowing
+	---------------------------
+	class A{
+		static void foo(){
+		}
+	}
+	
+	class B extends A{
+	
+		void foo(){
+		}
+	}
+	
+	
+	
+	abstract class
+	---------------
+	
+	allowed : Yes
+	abs class A{
+   		
+	}
+	
+	Note: 
+		even if a class dont have abs method i can declare it abs class
+		but if it have abs method then it must be declare ab class
+		
+		* abs class can hv intance variable while interface dont have (BIG)
+		*abs can have ctr : T	
+		* can have normal melthod : T
+		* can have static melthod : T
+		* can have ab melthod : T
+		* can create object : No
+		
+		
+ abs class Employee{
+	private int id;
+	private String name;
+	private double salary;
+	
+	public Employee(.....){
+	
+	}
+	
+	ab public void printInfo(){
+	}
+}	
+	
+class PTEmp extends Employee{
+
+        public Employee(.....){
+		super(......)
+		//
+	}
+
+}
+
+
+	
+	Real life use case of interface:
+	
+	API design
+	
+	user     stack				ravi		raviPop, raviPush
+	
+					    	 amit
+	
+	favour composition over inhertance
+	can we do resuablity without inhertiance YES
+	
+	
+	
+	
+	A-Z
+	* aka contract bw 2 parites
+	
+	
+	class Foo{
+	
+		public void jflkdsjflkdjf(){
+		}
+	}
+	class Foo2 extnds Foo{
+		@Override
+		public void jflkdsjflkjf(){
+		}
+	}
+	
+	
+	
+	
+	
+	
 	private methods are not visible in drived class
 	hence no q of overriding and overloading
+	
+	
+	
 	visibility modifier
-	package
-	Abstract classes in Java, Examples Implementation of an interface,
-	using interface Interface 
-	vs Abstract class Inner classes Object class,String class,Immutability
+	
+	package:
+	
+	used to orgainized the code
+	used to enforce better encapsulation
+	
+	
+	Inner classes Object class,String class,Immutability
+	
+	
+	if u want to master dsa in java 
+	cs 61b uc berkeley
+	
+	
+	Inner classes Object class:
+	----------------------
+	
+	top level inner class
+	class A{
+	
+		class B{
+		
+		}
+	}
+	
+	DSA
+	class LinkList{
+		class Node{
+		
+		}
+	
+	}
+	
+	method local inner class
+	-------------------------
+	class Me{
+	
+		void foo(){
+			class You{
+			
+			}
+			
+		}
+	
+	}
+	
+	annoynmous innner class
+	-------------------------
+	package com.day2.session3;
+//annoymous inner class
+interface Cook{
+    void cook();
+}
+public class InnerClass {
+    public static void main(java.lang.String[] args) {
 
+        Cook c = () ->{
+                System.out.println("it is a ann impl");
+            
+        };
+
+        c.cook();
+        Cook c2 = new Cook() {
+            @Override
+            public void cook() {
+                System.out.println("it is a ann impl 2");
+            }
+        };
+
+        Cook c3 = new Cook() {
+            @Override
+            public void cook() {
+                System.out.println("it is a ann impl 2");
+            }
+        };
+
+
+
+
+
+    }
+}
+
+	
+	String vs StringBuilder vs StringBuffer
+	------------------------------------------
+	
+	
 	The concept of exception handling
-
+	-------------------------
+	
 	Exception class methods, throw and rethrow 
 		finally keyword, user-defined exceptions
 
 
+
+	The proteced method of a class defined in a package can be access
+	in other package another class
+	
+	iff that class subclass that class
+	
+	Compiled from "Object.java"
+public class java.lang.Object {
+
+  public java.lang.Object();
+  
+  
+  public final native java.lang.Class<?> getClass();
+  
+  //it is gpp to override both togather ?
+  
+  public native int hashCode();
+  
+  public boolean equals(java.lang.Object);
+  
+  
+  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+  
+  public java.lang.String toString();
+  
+  
+  public final native void notify();
+  public final native void notifyAll();
+  public final native void wait(long) throws java.lang.InterruptedException;
+  public final void wait(long, int) throws java.lang.InterruptedException;
+  public final void wait() throws java.lang.InterruptedException;
+  
+  
+  
+  protected void finalize() throws java.lang.Throwable;
+  
+  
+  static {};
+}
+
+What are exception
+------------------
+
+exception handing
+collection 
+threads
+
+
+kb: try catch throw throws finally
+
+
+
+	
+
+	
+	
 
 
 
