@@ -1,0 +1,227 @@
+UKG java training
+-------------------
+https://www.linkedin.com/in/rajeevguptajavatrainer/
+https://github.com/rgupta00/UKG-java-8days-code
+https://drive.google.com/drive/folders/18vOAfWkaQ8xmE6wv65NCtXIkfUZozu9N?usp=sharing
+
+
+Agenda:
+Day 1: java oo
+Day 2: adv oo, Exception handling
+Day 3: Collection and threads
+Day 4: essential tools
+Day 5: RDBMS and NoSQL
+Day 6: Spring Boot REST
+Day 7: Intro to GCP and Linux
+Day 8: Docker and k8s
+
+
+Day 3: Adv oo
+-----------------------
+12:20
+
+Exception handing quick recap
+
+Exception wrapping and rethrowing Spring Boot
+
+
+GPP: for Exception handling
+
+Object class
+
+String class
+-------------
+	String obj are immutable
+	can we create our own immutable class 
+	
+	is it possible to create object without new oper
+	
+	String s="india"
+	String s2=new String("india");
+	
+	
+
+Immutablity
+	what are two way to achive thread safty
+	1. syn locking
+	2. Immutablity		scalable
+	
+	java 8 streams
+	
+can u create ur own immutable objects "
+
+yes
+
+
+
+Collections and Generics -- Collection framework
+
+
+Collection interfaces and classes
+For-each method for collection and iterators
+List, Set, Map interface Comparator, Comparator
+Queue interface
+Generics, ? Super, ? Extends
+Multithreading
+Introduction to Threads
+Thread Life Cycle, synchronization
+
+
+
+
+		
+
+	
+	DSA
+	class LinkList{
+		class Node{
+		
+		}
+	
+	}
+	
+	method local inner class
+	-------------------------
+	class Me{
+	
+		void foo(){
+			class You{
+			
+			}
+			
+		}
+	
+	}
+	
+	annoynmous innner class
+	-------------------------
+	package com.day2.session3;
+//annoymous inner class
+interface Cook{
+    void cook();
+}
+public class InnerClass {
+    public static void main(java.lang.String[] args) {
+
+        Cook c = () ->{
+                System.out.println("it is a ann impl");
+            
+        };
+
+        c.cook();
+        Cook c2 = new Cook() {
+            @Override
+            public void cook() {
+                System.out.println("it is a ann impl 2");
+            }
+        };
+
+        Cook c3 = new Cook() {
+            @Override
+            public void cook() {
+                System.out.println("it is a ann impl 2");
+            }
+        };
+
+
+
+
+
+    }
+}
+
+	
+	String vs StringBuilder vs StringBuffer
+	------------------------------------------
+	
+	
+	The concept of exception handling
+	-------------------------
+	
+	Exception class methods, throw and rethrow 
+		finally keyword, user-defined exceptions
+
+
+
+	The proteced method of a class defined in a package can be access
+	in other package another class
+	
+	iff that class subclass that class
+	
+	Compiled from "Object.java"
+public class java.lang.Object {
+
+  public java.lang.Object();
+  
+  
+  public final native java.lang.Class<?> getClass();
+  
+  //it is gpp to override both togather ?
+  
+  public native int hashCode();
+  
+  public boolean equals(java.lang.Object);
+  
+  
+  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+  
+  public java.lang.String toString();
+  
+  
+  public final native void notify();
+  public final native void notifyAll();
+  public final native void wait(long) throws java.lang.InterruptedException;
+  public final void wait(long, int) throws java.lang.InterruptedException;
+  public final void wait() throws java.lang.InterruptedException;
+  
+  
+  
+  protected void finalize() throws java.lang.Throwable;
+  
+  
+  static {};
+}
+
+What are exception
+------------------
+
+exception handing
+collection 
+threads
+
+
+kb: try catch throw throws finally
+
+
+
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
