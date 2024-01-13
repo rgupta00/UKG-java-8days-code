@@ -72,65 +72,6 @@ Thread Life Cycle, synchronization
 		
 
 	
-	DSA
-	class LinkList{
-		class Node{
-		
-		}
-	
-	}
-	
-	method local inner class
-	-------------------------
-	class Me{
-	
-		void foo(){
-			class You{
-			
-			}
-			
-		}
-	
-	}
-	
-	annoynmous innner class
-	-------------------------
-	package com.day2.session3;
-//annoymous inner class
-interface Cook{
-    void cook();
-}
-public class InnerClass {
-    public static void main(java.lang.String[] args) {
-
-        Cook c = () ->{
-                System.out.println("it is a ann impl");
-            
-        };
-
-        c.cook();
-        Cook c2 = new Cook() {
-            @Override
-            public void cook() {
-                System.out.println("it is a ann impl 2");
-            }
-        };
-
-        Cook c3 = new Cook() {
-            @Override
-            public void cook() {
-                System.out.println("it is a ann impl 2");
-            }
-        };
-
-
-
-
-
-    }
-}
-
-	
 	String vs StringBuilder vs StringBuffer
 	------------------------------------------
 	
@@ -196,8 +137,208 @@ kb: try catch throw throws finally
 
 	
 
+Collections and Generics -- Collection framework
+
+
 	
+
+
+
+
+
+
+public interface xyz {
+	void abc() throws IOException;
+}
+
+
+public interface pqr {
+	void abc() throws FileNotFoundException;
+}
+
+public class Implementation implements xyz, pqr {
+	public void abc() throws FileNotFoundException
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Which of the following statement(s) can you insert in place of “// insert code” comment?
+A. public void abc() throws IOException
+B. public void abc() throws FileNotFoundException
+C. public void abc() throws FileNotFoundException, IOException
+D. public void abc() throws IOException, FileNotFoundException
+
+
+
+
+
+
+ADT
+
+
+interface Gadget {
+	void doStuff();
+}
+abstract class Electronic {
+
+	void getPower() { 
+		System.out.print("plug in "); 
+      	 }
+}
+
+public class Tablet extends Electronic implements Gadget {
+	void doStuff() {
+		 System.out.print("show book "); 
+	}
+	public static void main(String[] args) {
+		new Tablet().getPower();
+		new Tablet().doStuff();
+	}
+}
+
+
+final ?
+	final data
+	final method
+	final class
+	method arg
 	
+
+class Foo{
+	final void foo(){
+	}
+}
+
+
+
+
+
+class Bar extends Foo{
+	 void foo(){
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Overriding with excpetion handing
+---------------------------------
+"overriden method can not throw bigger ex then base method" Checked ex
+in unched ex no rule
+not throwing ex is also ok
+
+
+class AEx extends Exception{}
+
+class BEx extends AEx{}
+
+
+class A{
+	void foo()throws AEx{
+		I
+	}
+}
+
+class B extends A{
+
+	void foo()throws ArithmaticEx{
+		II
+	}
+}
+
+A a=new B();
+a.foo();
+
+
+
+
+ctr with excpetion handing
+-------------------------
+drive ctr can not throw smaller ex
+
+class AEx extends Exception{}
+
+class BEx extends AEx{}
+
+
+class A{
+	
+	A()throws IOEx...{
+	}
+}
+
+class B extends A{
+
+	B()throws FIleNotFoundEx...{
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+git
+maven
+docker
+mysql/posgress
+
+
+
+account
+--------
+github
+dockerhub
+gcp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
