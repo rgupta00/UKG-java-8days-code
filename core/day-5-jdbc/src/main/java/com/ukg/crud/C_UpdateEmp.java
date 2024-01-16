@@ -1,0 +1,26 @@
+package com.ukg.crud;
+
+import com.ukg.empapp.factory.ConnectionFactory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class C_UpdateEmp {
+    public static void main(String[] args) {
+        Connection connection= ConnectionFactory.getConnection();
+        //i want to add a records : PrepareStatement
+
+        try {
+            PreparedStatement pstmt=connection.
+                    prepareStatement("update emp set salary=? where id=?");
+            pstmt.setDouble(1, 38000);
+            pstmt.setInt(2, 3);
+           int noOfRowsEffected= pstmt.executeUpdate();
+            System.out.println(noOfRowsEffected);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+}
