@@ -1,0 +1,244 @@
+java + framewroks+ devops + one front end
+
+Day 5:
+--------
+Intro to git and common commands
+
+MySQL basics commands and jdbc
+
+1. basics sql crud op
+2. hello world of jdbc
+3. crud op with jdbc
+4. how to design real life backed database app (most)
+
+
+basics sql crud op
+-------------------
+show databases;
+
+create database ukgdemo;
+ 
+use ukgdemo;
+
+
+create table emp
+(
+    id int not null auto_increment primary key,
+    name varchar(20) not null,
+    salary double not null
+);
+
+ desc emp;
+ desc table emp;
+
+
+
+INSERT INTO emp(name,salary) VALUES('Rajiv',20000);
+INSERT INTO emp(name,salary) VALUES('Ekta',22000);
+INSERT INTO emp(name,salary) VALUES('Keshav',12000);
+INSERT INTO emp(name,salary) VALUES('gun',42000);
+
+
+select * from emp;
++----+--------+--------+
+| id | name   | salary |
++----+--------+--------+
+|  1 | Rajiv  |  20000 |
+|  2 | Ekta   |  22000 |
+|  3 | Keshav |  12000 |
+|  4 | gun    |  42000 |
++----+--------+--------+
+
+
+
+update
+UPDATE emp SET Salary = Salary*1.03;
+
+
+DELETE 
+   DELETE FROM Emp WHERE Salary<10000;
+
+
+
+ALTER TABLE:		
+			ALTER TABLE Emp RENAME TO employe;
+
+			ALTER TABLE Emp ADD Age numeric(3);
+
+			ALTER TABLE Emp MODIFY Ename VARCHAR(22) NOT NULL;
+
+			ALTER TABLE Emp DROP COLUMN Age;
+
+
+
+Drop the table:		DROP TABLE IF EXISTS employee;
+
+
+changing the column name:
+
+	alter table nameOfthetable change oldColumnName newColumnName varchar (10) ;
+
+
+
+
+
+
+
+
+
+REPLACE Statement vs insert
+-----------------------------
+	REPLACE Statement works exactly same as the INSERT Statement, 
+	except only then if an old record in the table has the same 
+	value as in new row for a PRIMARY KEY or UNIQUE index then old 
+	row is deleted and new row is inserted. 
+
+	REPLACE INTO Emp VALUES(6,'Amar','Chennai','Developer',16000,1124);
+
+
+TRUNCATE Statement 
+--------------------
+	TRUNCATE Statement is also used to empty 
+	the table completely. 
+
+	TRUNCATE Emp1;
+
+
+
+
+2. hello world jdbc
+----------------------
+1. import the lib
+2. load the driver
+3. create conn object
+	(think about prop file)
+	
+4. read / update/insert
+
+	Statement 	PreParedStatement 		CallableStatemetn
+	hello		good in perf			Call sp (store procedure)
+	it can			
+	leads
+	SQL inject	no prob of sql
+	bad
+
+    Statement
+	|
+PreParedStatement
+        |
+   CallableStatemetn
+   
+
+5. let assume we want get all the records
+
+	Statement stmt=con.createst....("select * from emp");
+	
+	ResultSet rs=stmt.executeQuery()
+	
+	executeQuery vs executeUpdate
+	r		add/del/update
+	
+	rs			no of rows effected
+	
+6. iterate the rec and print it
+
+7. close the conn
+
+
+Code
+
+
+Factory dp
+
+3 tier arch
+
+
+Java + mongodb 
+
+easy : spring boot + mongodb?
+
+-----------------------------
+git 
+
+sql: crud operations
+jdbc : is a jsr
+
+	java peoples give us jsr
+	
+	vendor implements it mysql
+	
+	
+	
+Project : Productstore application
+
+product table
+id name price discount
+
+apply proper dao dto pattern to write crud operation
+apply logging
+apply JUnit and mockito
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mongodb intro to NoSQL
+
+
