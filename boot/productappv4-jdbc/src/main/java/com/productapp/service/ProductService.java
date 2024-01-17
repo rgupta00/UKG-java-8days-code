@@ -1,6 +1,6 @@
 package com.productapp.service;
 
-import com.productapp.repo.Product;
+import com.productapp.dto.Product;
 
 import java.util.List;
 
