@@ -1,0 +1,45 @@
+
+
+Tech Used:
+-----------
+
+spring boot
+docker
+k8s
+
+project:
+---------
+Bank application: u need to create a sb application for fund transfer, deposit withdraw
+and use proper ex handling, validation and swagger doc
+and deploy this on docker and on k8s 5 8 3
+
+A ---- B
+tx mgt should be done property, ACID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

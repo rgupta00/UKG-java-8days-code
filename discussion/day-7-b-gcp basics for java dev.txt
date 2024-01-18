@@ -1,0 +1,421 @@
+
+GCP basics
+==========
+
+
+How to intract with gcp:
+-------------------
+1. using dashboard
+
+2. cloud shell
+
+3. client lib google cloud cli installer
+
+4. REST api
+
+lab 1: installing web server on gcp
+-------------------------------------
+Installing HTTP Webserver on Google Compute Engine Virtual Machine
+
+External IP Addresses V2
+
+Static IP Addresses 
+
+sudo su
+apt update 
+apt install apache2
+ls /var/www/html
+echo "Hello World!"
+echo "Hello World!" > /var/www/html/index.html
+echo $(hostname)
+echo $(hostname -i)
+echo "Hello World from $(hostname)"
+echo "Hello World from $(hostname) $(hostname -i)"
+echo "Hello world from $(hostname) $(hostname -i)" > /var/www/html/index.html
+sudo service apache2 start
+
+launch apache2 to external brower using public ip
+
+
+Internal IP vs External IP
+-------------------------
+If we stop/restart our vm external ip changes :(
+
+
+
+
+lab 2: Assign an static ip to VM
+---------------------------------
+search external ip address -->vpc network->resver static ip address
+	-> assign to our vm (note create static ip in same region in which u have created vm)
+	
+
+lab 3: Configure web server with startup script
+---------------------------------------------
+
+#!/bin/bash
+apt update 
+apt -y install apache2
+echo "Hello world from $(hostname) $(hostname -I)" > /var/www/html/index.html
+
+
+
+lab 4: Instance template
+-----------------------
+	we can easily create instance using instace template
+	No cost of template 
+	
+
+
+lab 5: cloud storgage
+---------------------
+search cloud storage--> create bucket (like s3)--> upload file
+
+
+
+lab 5: getting started with gcloud
+------------------------------------------
+gcloud --version
+	all service availble on gcloud
+	
+gcloud init
+
+
+select an proejct
+gcloud config set project learning-gcp-rg-ukg
+
+create an instance in the project using cloud shell
+gcloud compute instances create learning-gcp-demo
+
+create a bucket using cloud shell
+gsutil mb gs://learning-gs-bca
+
+it comes wth readme fine
+
+copy a file to alreay existing bucket
+gsutil cp README-cloudshell.txt gs://mydemobucket-rg-ukg
+
+
+
+
+Lab 6: How to intract with google cloud cli installer
+---------------------------------------------
+install cli installer
+https://cloud.google.com/sdk/docs/install#deb
+
+gcloud auth login
+
+set project
+gcloud config set project learning-gcp-rg-ukg
+
+create VM
+gcloud compute instances create learning-gcp-43 --machine-type f1-micro
+
+describe instance
+gcloud compute instances describe learning-gcp-43
+
+creating bucket
+gsutil mb gs://learning-gcp-using-cli
+
+creating instance using an script file
+
+
+creating instance using python script
+
+pip install google-cloud-storage
+
+hello.py
+
+from google.cloud import storage
+
+def create_bucket(bucket_name):
+    """Creates a new bucket."""
+    # bucket_name = "your-new-bucket-name"
+
+    storage_client = storage.Client()
+
+    bucket = storage_client.create_bucket(bucket_name)
+
+    print(f"Bucket {bucket.name} created")
+
+   
+python hello.py
+
+
+
+Lab 7: installation Docker and local k8s cluster on gcp
+---------------------------------------------------------
+
+
+Step-by-Step Guide to Install Docker/kubectl/minkikube/Kind for local development on Ubuntu in AWS
+---------------------------------------------------------------------------------------------
+Installing docker
+Starting the Docker service
+Verifying the installation
+Enabling the Docker service
+Check the Docker version
+Add User to Docker Group
+run some docker examples
+install kubectl
+install minikube
+install kind
+
+
+
+updating system
+sudo apt-get update
+
+install docker
+sudo apt-get install docker.io -y
+
+Starting the Docker service
+
+sudo systemctl status docker
+sudo systemctl enable --now docker
+sudo systemctl start docker
+
+Verifying the installation
+sudo docker run hello-world
+
+
+To start the Docker service automatically when the instance starts, you can use the following command:
+sudo systemctl enable docker
+
+
+Check the Docker version
+docker --version
+
+
+Add your user to the Docker group to run Docker commands without 'sudo'
+sudo usermod -a -G docker $(whoami)
+
+Note that the change to the user’s group membership will not take effect until the next time the user logs in. You can log out and log back in to apply the changes or use the following command to activate the changes without logging out:
+ 
+newgrp docker
+
+
+inbound rule
+
+
+install kubectl:
+-----------------
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+
+download lastest version of kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+install
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+If you do not have root access on the target system, you can still install kubectl to the ~/.local/bin directory:
+
+chmod +x kubectl
+mkdir -p ~/.local/bin
+mv ./kubectl ~/.local/bin/kubectl
+# and then append (or prepend) ~/.local/bin to $PATH
+
+
+
+
+
+install minkikube:
+-----------------
+https://minikube.sigs.k8s.io/docs/start/
+
+
+download and install
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+start the cluster
+minikube start
+
+Interact with your cluster
+kubectl get po -A
+
+
+minikube dashboard
+
+install kinD cluster
+---------------------
+https://kind.sigs.k8s.io/docs/user/quick-start/#installation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+choose create new configuration---> my-default-config-->....
+
+gcloud config list
+
+gcloud config list project
+
+gcloud config list account
+
+
+
+gcloud config configurations list
+
+gcloud config configurations activate my-default-config
+
+gcloud config list
+gcloud config configurations describe my-second-configuration
+gcloud compute instances list
+gcloud compute instances create
+gcloud compute instances create my-first-instance-from-gcloud
+gcloud compute instances describe my-first-instance-from-gcloud
+gcloud compute instances delete my-first-instance-from-gcloud
+gcloud compute zones list
+gcloud compute regions list
+gcloud compute machine-types list
+ 
+gcloud compute machine-types list --filter zone:asia-southeast2-b
+gcloud compute machine-types list --filter "zone:(asia-southeast2-b asia-southeast2-c)"
+gcloud compute zones list --filter=region:us-west2
+gcloud compute zones list --sort-by=region
+gcloud compute zones list --sort-by=~region
+gcloud compute zones list --uri
+gcloud compute regions describe us-west4
+ 
+gcloud compute instance-templates list
+gcloud compute instance-templates create instance-template-from-command-line
+gcloud compute instance-templates delete instance-template-from-command-line
+gcloud compute instance-templates describe my-instance-template-with-custom-image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+gcloud config list project
+gcloud config list account
+
+listing all active configuration list
+---------------------------------
+gcloud config configurations list
+
+
+
+creating new configuration
+----------------------------
+gcloud config configurations create my-sec-config
+gcloud config configurations activate  my-sec-config
+gcloud config configurations describe my-sec-config
+
+
+configuration project to new gcloud configuration:
+----------------------------------------------
+gcloud config set project rgupta-gcp-p1
+gcloud config set core/account rgupta.cloud@gmail.com
+
+again activate earlier configuration
+-------------------------------
+gcloud config configurations activate my-app-config
+
+delete another configuration
+-----------------------------
+gcloud config configurations list
+gcloud compute instances delete my-first-instance-from-gcloud
+
+
+
+playing with services
+----------------------------
+
+gcloud compute instances list
+
+gcloud compute instances create
+
+gcloud compute instances create my-first-instance
+	to create new instance of vm instance
+	
+gcloud compute instances describe my-first-instance
+
+
+gcloud config list
+		check region and zone information
+		
+gcloud compute instances list
+	go get list of instances
+
+gcloud compute instances delete my-first-instance
+
+other informations
+----------------------
+gcloud compute zones list
+gcloud compute regions list
+gcloud compute machine-types list
+
+
+
+ 
+gcloud compute machine-types list --filter zone:asia-southeast2-b
+gcloud compute machine-types list --filter "zone:(asia-southeast2-b asia-southeast2-c)"
+gcloud compute zones list --filter=region:us-west2
+gcloud compute zones list --sort-by=region
+gcloud compute zones list --sort-by=~region
+gcloud compute zones list --uri
+gcloud compute regions describe us-west4
+ 
+gcloud compute instance-templates list
+gcloud compute instance-templates create instance-template-from-command-line
+gcloud compute instance-templates delete instance-template-from-command-line
+gcloud compute instance-templates describe my-instance-template-with-custom-image
+
+
+
+
+How to intract with gcp using dashboard:
+-----------------
+1. Explore GCP dashboard
+2. create VM instance 
+3. create a bucket mydemobucket-rg-ukg
+   upload a file from your machine
+
+How to intract with gcp using cloud shell:
+-----------------------------------------
+
+
+
