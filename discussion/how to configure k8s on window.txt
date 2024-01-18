@@ -1,0 +1,31 @@
+
+
+docker and k8s
+----------------
+
+how to configure kind cluster in widow machine
+-------------------------------------------
+1. check docker is working or not
+
+	docker -v
+	docker run hello-world
+	
+2. configure kubectl (client k8s se baat karta hey)
+---------------------------------------------
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+
+https://dl.k8s.io/release/v1.29.1/bin/windows/amd64/kubectl.exe
+
+3. download kinD cluster(k8s for learning)
+-------------------------------------
+	https://kind.sigs.k8s.io/docs/user/quick-start/
+	
+	https://kind.sigs.k8s.io/dl/v0.20.0/kind-windows-amd64
+	
+4 put both exe c/k8s
+
+5. set the env variable
+
+6. check if kubectl
+
+7. check if kinD is working is not
