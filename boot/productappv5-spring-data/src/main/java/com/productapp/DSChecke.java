@@ -17,6 +17,6 @@ public class DSChecke implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-      // productRepo.save(new Product("laptop",90000.00));
+       productRepo.save(new Product("laptop",90000.00));
     }
 }
